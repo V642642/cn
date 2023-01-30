@@ -11,7 +11,6 @@ import seven from "../public/images/Clients/Knowcross.jpeg";
 import eight from "../public/images/Clients/live-nation-logo-colour.png";
 import nine from "../public/images/Clients/Meyer.jpeg";
 import ten from "../public/images/Clients/oswaal-logo-colour.png";
-import eleven from "../public/images/Clients/Protiviti_Logo.jpg";
 import twelve from "../public/images/Clients/tata-metaliks-logo-colour.png";
 
 export default function Clients() {
@@ -147,9 +146,7 @@ export default function Clients() {
             alt="clients"
           />
         </div>
-        <div className="p-3">
-          
-        </div>
+      
         <div className="p-3">
           <Image
             className="md:w-[200px] w-[180px]  h-[70px] object-contain grayscale hover:grayscale-0 cursor-pointer"
