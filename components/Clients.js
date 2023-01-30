@@ -148,11 +148,7 @@ export default function Clients() {
           />
         </div>
         <div className="p-3">
-          <Image
-            className="md:w-[200px] w-[180px]  h-[70px] object-contain grayscale hover:grayscale-0 cursor-pointer"
-            src={eleven}
-            alt="clients"
-          />
+          
         </div>
         <div className="p-3">
           <Image
