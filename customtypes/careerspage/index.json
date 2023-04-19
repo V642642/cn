@@ -1,0 +1,17 @@
+{
+  "id": "careerspage",
+  "label": "CareersPage",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "heading": {
+        "type": "Text",
+        "config": {
+          "label": "heading",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

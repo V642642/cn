@@ -1,0 +1,69 @@
+{
+  "id": "clientcards",
+  "label": "ClientCards",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "heading": {
+        "type": "Text",
+        "config": {
+          "label": "heading",
+          "placeholder": ""
+        }
+      },
+      "para": {
+        "type": "Text",
+        "config": {
+          "label": "para",
+          "placeholder": ""
+        }
+      },
+      "client_img": {
+        "type": "Image",
+        "config": {
+          "label": "client_img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "hover_heading": {
+        "type": "Text",
+        "config": {
+          "label": "hover_heading",
+          "placeholder": ""
+        }
+      },
+      "hover_para": {
+        "type": "Text",
+        "config": {
+          "label": "hover_para",
+          "placeholder": ""
+        }
+      },
+      "hover_img": {
+        "type": "Image",
+        "config": {
+          "label": "hover_img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "video_link": {
+        "type": "Link",
+        "config": {
+          "label": "video_link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "null": {
+        "type": "Text",
+        "config": {
+          "label": "null",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
