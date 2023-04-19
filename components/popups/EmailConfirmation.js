@@ -184,7 +184,7 @@ function EmailConfirmation({ setOpen, open }) {
                   </Button>
                 </Stack>
                 <p className="w-full sm:w-10/12">
-                  Quetions ? Email us at{" "}
+                  Quetions ? Email us at
                   <span className="text-green-500">contact@hiringplug.com</span>
                 </p>
                 </form>

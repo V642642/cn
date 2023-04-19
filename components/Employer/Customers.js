@@ -51,9 +51,9 @@ export default function Customers() {
             Faster Hiring
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               hiringplug comes to me as very innovative solution and futuristic
               approach to solve larger business problems for Talent Acquisition.
               I have had a great experience in accelerating the hiringplug
@@ -72,9 +72,9 @@ export default function Customers() {
             Configurable ATS
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               hiringplug has helped us tremendously to build our team in India.
               For a startup needing good talent, in absence of dedicated
               resources or bandwidth, hiringPlug was able to connect us with

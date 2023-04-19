@@ -51,9 +51,9 @@ export default function OurClient() {
             Easily aligns to our depth & scale of hiring
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               Being a large firm, our talent acquisition requirements are
               diverse & targeting best of the talent in industry. hiringplug
               comes across as a reliable aggregator platform that easily aligns
@@ -73,9 +73,9 @@ export default function OurClient() {
             single point coordination system
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               hiringplug is a great agency aggregator that’s helped us ramp-up
               our hiring requirements. They align well with our contingent
               hiring needs and the single point coordination system makes it
@@ -94,9 +94,9 @@ export default function OurClient() {
             Culture Fitment
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               In a startup, culture fitment becomes the first parameter for
               selection of candidates. HiringPlug’s intervention provides access
               to culturally suitable, highly skilled candidates.
@@ -114,7 +114,7 @@ export default function OurClient() {
             Accelerating Hiring Turnaround Time
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
               A great experience in accelerating hiring turnaround time and
               value add to our business.
@@ -132,9 +132,9 @@ export default function OurClient() {
             One Stop Solution for Every Hiring Need
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               The best part their business model is the quick turnaround time
               and variety. Hiringplug is one stop solution for every hiring need
               and we now go nowhere else.

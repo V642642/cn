@@ -51,9 +51,9 @@ export default function CustomerSpeak() {
             Seamless Payment Collection
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               hiringplug journey has been wonderful, enriching & important for
               us as a recruitment vendor. We doubled our business within 2
               months and don`&apos;`t have to worry about Payment collections or status
@@ -73,9 +73,9 @@ export default function CustomerSpeak() {
           User-Friendly Platform
           </p>
           <q className="text-center text-[22px] text-white  w-full md:w-7/12">
-            {" "}
+            
             <i>
-              {" "}
+              
               The platform is very easy to use even for early stage users and my team productivity has
 grown multifold with a constant flow of job openings. 
             </i>

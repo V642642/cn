@@ -357,8 +357,8 @@ export default function SecondStep() {
        {isLoading ? "Please wait..." : "Get Started"} 
       </button>
       {/* <p className="text-[10px] text-gray-700">
-        By submitting your information, you agree to Hiringplug{" "}
-        <a className="underline">Terms of Service</a> and{" "}
+        By submitting your information, you agree to Hiringplug
+        <a className="underline">Terms of Service</a> and
         <a className="underline">Privacy Policy</a>. You can opt out anytime.
       </p> */}
     </form>

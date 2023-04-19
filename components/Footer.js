@@ -192,10 +192,10 @@ export default function Footer() {
           <p className="">
             <a target="_blank" href="https://www.hiringplug.com/privacy.php" className="hover:text-white text-[14px] cursor-pointer">
               Privacy Policy
-            </a>{" "}
-            |{" "}
+            </a>
+            |
             <a target="_blank" href="https://my.hiringplug.com/agency-recruiter-terms-of-use" className="hover:text-white text-[14px] cursor-pointer">
-              {" "}
+              
               Terms & Conditions
             </a>
           </p>

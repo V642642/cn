@@ -22,7 +22,7 @@ export default function Banner() {
 		</div> */}
       <div className="absolute flex items-start justify-center flex-col gap-2 font-primary top-[25%] px-2 lg:ml-[15%] md:ml-[20%]">
         <h2 className="text-[38px] leading-[1px] sm:leading-[58px] sm:text-[55px] text-white font-bold">
-          PLUG-IN FOR{" "}
+          PLUG-IN FOR
         </h2>
         <h2 className="text-[38px] sm:leading-[58px] sm:text-[55px] text-white font-bold">
           FASTER HIRING

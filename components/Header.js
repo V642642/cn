@@ -25,7 +25,7 @@ export default function Header() {
         justify-between"
       >
         <Link href="/">
-          {" "}
+          
           <Image src={hplogo} alt="logo"  width={300} height={200} className="w-[250px]" />
         </Link>
         <ul className={`flex md:relative md:px-0 px-2 fixed md:flex-row items-start md:w-auto  w-[80%] flex-col top-0 right-0 md:h-auto h-[100vh] md:py-0 py-20 md:bg-opacity-100 bg-opacity-90 bg-black md:bg-transparent text-white md:items-center md:justify-between gap-2 transition-all duration-500 ease-in-out ${close ? "md:translate-x-0 translate-x-0" : "md:translate-x-0 translate-x-[1000px]"}`}>
@@ -104,7 +104,7 @@ export default function Header() {
                 pathname === "/resources" ? "bg-[#00a63f]" : ""
               } px-3  md:hidden inline-flex transition-all py-1 relative  cursor-pointer  text-[14px]`}
             >
-              {" "}
+              
               Resources <FontAwesomeIcon icon={faCaretDown} />
             </span>
             <ul

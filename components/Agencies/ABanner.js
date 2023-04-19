@@ -28,7 +28,7 @@ export default function ABanner() {
           </svg>
         </span>
         <span class="absolute flex items-center justify-center w-full h-full text-orange-500 transition-all duration-300 transform group-hover:translate-x-full ease">
-          SIGN UP{" "}
+          SIGN UP
         </span>
         <span class="relative invisible">SIGN UP </span>
       </a>

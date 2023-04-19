@@ -60,7 +60,7 @@ export default function ThirdStep({setStep}) {
         <span>I have read and agree to the Terms of Use and Privacy Policy.</span>
       </label>
       <button onClick={() => setStep(0)} className="w-full bg-green-800 h-10 text-white text-[15px] rounded-[4px]">
-        {" "}
+        
         Get Started
       </button>
       <p className="text-[10px] text-gray-700">By submitting your information, you agree to Hiringplug <a className="underline">Terms of Service</a> and <a className="underline">Privacy Policy</a>. You can opt out anytime.</p>
