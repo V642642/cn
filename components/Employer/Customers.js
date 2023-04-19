@@ -37,7 +37,7 @@ export default function Customers() {
   };
 
   return (
-    <div className="flex bg-fixed border-t-8 border-green-500 bg-no-repeat bg-cover bg-[50%] flex-col  w-full gap-2 items-center bg-[url('../public/images/base5.gif')]  justify-center py-24">
+    <div className="flex bg-fixed border-t-8 border-green-500 bg-no-repeat bg-cover bg-[50%] flex-col  w-full gap-2 items-center bg-ourclient  justify-center py-24">
       <h2 className="text-[38px] font-primary font-bold mb-14 text-white">
         Customers <span className="text-green-500">Speak</span>
       </h2>

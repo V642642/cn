@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import agency from "../../public/images/AgencyScreenshot.jpg";
+import agency from "../../public/images/AgencyScreenshot.webp";
 
 
 export default function AProductBanner() {

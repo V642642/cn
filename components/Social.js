@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Social() {
   return (
-    <div className="flex bg-fixed bg-no-repeat bg-cover bg-[50%]  w-full gap-12 items-center bg-[url('../public/images/img-13.jpg')] py-20 justify-center flex-col border-t-8 min-h-[400px] border-green-500">
+    <div className="flex bg-fixed bg-no-repeat bg-cover bg-[50%]  w-full gap-12 items-center bg-social py-20 justify-center flex-col border-t-8 min-h-[400px] border-green-500">
       <p className="text-[32px] font-bold font-primary text-gray-500 ">
         We are <span className="text-green-500 font-semibold">Social</span>
       </p>

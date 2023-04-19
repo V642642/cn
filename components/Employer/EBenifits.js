@@ -1,11 +1,11 @@
 import React from 'react';
-import one from "../../public/images/client.png";
-import two from "../../public/images/hassle-free.png";
-import three from "../../public/images/single-window.png";
-import four from "../../public/images/cloud.png";
-import five from "../../public/images/organise.png";
-import six from "../../public/images/vendor.png";
-import seven from "../../public/images/Intelligence.png"
+import one from "../../public/images/client.webp";
+import two from "../../public/images/hassle-free.webp";
+import three from "../../public/images/single-window.webp";
+import four from "../../public/images/cloud.webp";
+import five from "../../public/images/organise.webp";
+import six from "../../public/images/vendor.webp";
+import seven from "../../public/images/Intelligence.webp"
 
 import Image from 'next/image';
 
@@ -26,7 +26,7 @@ export default function EBenifits() {
       </div>
       <div className="w-full md:w-3/12 flex items-center justify-center  flex-col">
         <Image src={two} alt="images" className="w-[90px]" />
-        <p className="text-green-600 text-[18px] text-center">It's free to join</p>
+        <p className="text-green-600 text-[18px] text-center">It`&apos;`s free to join</p>
         <p className="text-center text-[14px]">
         Ubiquitous access on the cloud and regular updates using our integrated ATS.
 

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import Case from "../../public/images/case-study-1.png";
-import Case2 from "../../public/images/case-study-2.png";
+import Case from "../../public/images/case-study-1.webp";
+import Case2 from "../../public/images/case-study-2.webp";
 import isight_header from "../../public/images/isight_header.jpeg";
 
 

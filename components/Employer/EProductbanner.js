@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-import agency from "../../public/images/Employerscreen.jpg";
+import agency from "../../public/images/Employerscreen.webp";
 
 export default function EProductbanner() {
   return (

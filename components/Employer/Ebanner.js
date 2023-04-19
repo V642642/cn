@@ -2,13 +2,14 @@ import React from 'react'
 
 export default function Ebanner() {
   return (
-    <div className="bg-no-repeat font-primary bg-right-top bg-cover relative flex  justify-center w-full gap-2 items-start flex-col bg-[url('../public/images/employer.jpg')] h-[90vh] md:h-[60vh]">
-      <h2 className="sm:ml-[20%] ml-5 text-[25px] sm:text-[35px] text-gray-500 font-semibold">
+    <div className="bg-no-repeat font-primary bg-right-top bg-cover relative flex  justify-center w-full gap-2 items-start flex-col bg-employer h-[90vh] md:h-[60vh]">
+      <h2 className="md:ml-[20%] lg:ml-[15%] ml-5 text-[25px] sm:text-[35px] text-gray-500 font-semibold">
       HIRE 5X FASTER
       </h2>
       <a
-        href="#_"
-        className="relative sm:ml-[20%] ml-5 inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-green-600 transition duration-300 ease-out border-2 border-green-500 rounded-[5px] shadow-md group"
+        href="https://my.hiringplug.com/employer-signup"
+        target="_blank"
+        className="relative md:ml-[20%] lg:ml-[15%] ml-5 inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-green-600 transition duration-300 ease-out border-2 border-green-500 rounded-[5px] shadow-md group"
       >
         <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-green-500 group-hover:translate-x-0 ease">
           <svg

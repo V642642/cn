@@ -1,19 +1,25 @@
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import React from "react";
-import sign from "../../public/images/sign-icon.png";
-import vacancy from "../../public/images/connect.png";
-import propose from "../../public/images/propose.png";
+import React, { useState } from "react";
+import sign from "../../public/images/sign-icon.webp";
+import vacancy from "../../public/images/connect.webp";
+import propose from "../../public/images/propose.webp";
+import Clientspopup from "../popups/Clientspopup";
 
 export default function ANextSteps() {
+
+  const [open, setOpen] = useState(false);
+
+
   return (
-    <div className="flex bg-fixed bg-no-repeat bg-cover bg-[50%] flex-col  border-t-8 border-green-500  w-full gap-2 items-center bg-[url('../public/images/img-17.jpg')]  justify-center">
+    <div className="flex bg-fixed bg-no-repeat bg-cover bg-[50%] flex-col  border-t-8 border-green-500  w-full gap-2 items-center bg-enextsteps justify-center">
       <div className="w-full md:w-8/12 py-14 flex items-center justify-around gap-5 flex-col ">
         <div className="flex items-center justify-center py-10 flex-col gap-6">
-          <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full border-4 border-green-700">
+          <div onClick={() => setOpen(true)} className="w-[150px] cursor-pointer h-[150px] flex items-center justify-center rounded-full border-4 border-green-700">
             <FontAwesomeIcon icon={faPlay} className="text-[60px] text-white" />
           </div>
+          <Clientspopup open={open} setOpen={setOpen} />
           <p className="text-[25px] font-primary text-white font-semibold uppercase py-2 px-6">
             Next <span className="text-green-500">Steps</span>
           </p>

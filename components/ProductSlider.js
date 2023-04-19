@@ -1,8 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import agency from "../public/images/agev2.png";
-import employer from "../public/images/empv2.png";
+import agency from "../public/images/agev2.webp";
+import employer from "../public/images/empv2.webp";
 
 
 export default function ProductSlider() {

@@ -1,19 +1,19 @@
 import React from 'react';
-import one from "../../public/images/client.png";
-import two from "../../public/images/hassle-free.png";
-import three from "../../public/images/single-window.png";
-import four from "../../public/images/cloud.png";
-import five from "../../public/images/organise.png";
-import six from "../../public/images/vendor.png";
-import seven from "../../public/images/Intelligence.png"
-import simplified from "../../public/images/simplified.png"
+import one from "../../public/images/client.webp";
+import two from "../../public/images/hassle-free.webp";
+import three from "../../public/images/single-window.webp";
+import four from "../../public/images/cloud.webp";
+import five from "../../public/images/organise.webp";
+import six from "../../public/images/vendor.webp";
+import seven from "../../public/images/Intelligence.webp"
+import simplified from "../../public/images/simplified.webp"
 import Image from 'next/image';
 
 export default function Abenifits() {
   return (
     <div className="w-full border-b-4 border-green-600  gap-8 font-primary flex flex-col items-center justify-center pt-24 pb-32">
-    <p className="text-[35px] text-orange-500">
-      <b className="text-gray-700">Recruitment Agencies' </b> Benefits
+    <p className="text-[35px] text-center text-orange-500">
+      <b className="text-gray-700 ">Recruitment Agencies </b> Benefits
     </p>
     <div className="w-full lg:w-8/12 md:w-11/12  flex items-center justify-center gap-6 flex-col md:flex-row px-2">
       <div className="w-full md:w-3/12 flex items-center justify-center  flex-col">
@@ -26,7 +26,7 @@ export default function Abenifits() {
       </div>
       <div className="w-full md:w-3/12 flex items-center justify-center  flex-col">
         <Image src={five} alt="images" className="w-[90px]" />
-        <p className="text-orange-500 text-[18px] text-center">It's free to join</p>
+        <p className="text-orange-500 text-[18px] text-center">It`&apos;`s free to join</p>
         <p className="text-center text-[14px]">
         Ubiquitous access on the cloud and regular updates using our integrated ATS.
 
