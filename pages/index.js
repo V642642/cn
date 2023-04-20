@@ -11,13 +11,18 @@ import Request from "../components/Employer/Request";
 import dynamic from "next/dynamic";
 import { createClient } from "../prismicio";
 import Blog from "../components/Blog"
+import { useState } from "react";
 const WhyHp = dynamic(() => import("../components/WhyHp"), { ssr: false });
 
 export default function Home({ marquee, cards }) {
+  
+ 
+
+  
   return (
     <div className="w-full relative flex items-center justify-center flex-col overflow-x-hidden">
-      <Marquee marquee={marquee?.data} />
-      <Banner />
+      {/* <Marquee  marquee={marquee?.data} /> */}
+      <Banner marquee={marquee?.data} />
       <Clients cards={cards} />
       <WhyHp />
       <KeyBenifit />
