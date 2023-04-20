@@ -46,7 +46,7 @@ export default function Header({ marquee }) {
       {pathname === "/" && state ? <Marquee state={state} setState={setState} marquee={marquee} /> : <></>}
 
       <div
-        className={` ${pathname === "/" && state ? "top-[38px]" : "top-0"} w-full h-[100px] fixed   z-10 font-primary  flex items-center bg-black bg-opacity-70	 justify-center`}
+        className={` ${pathname === "/" && state ? "md:top-[38px] top-0" : "top-0"} w-full h-[100px] fixed   z-10 font-primary  flex items-center bg-black bg-opacity-70	 justify-center`}
       >
         <div
           className="w-11/12 xl:w-[70%] lg:w-10/12 flex py-5 items-center
