@@ -4,9 +4,9 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import requestImage from "../public/images/request.webp";
 
-export default function Marquee({marquee}) {
+export default function Marquee({ marquee , state , setState }) {
 
-  const [state , setState] = useState(true);
+  
   const [request , setRequest] = useState(false);
 
   const wrapperRef = useRef(null);
@@ -32,7 +32,7 @@ export default function Marquee({marquee}) {
 
 
   return (
-    <>{state ? <div className={`bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 w-full p-2 md:block hidden text-center font-primary relative z-10 text-[14px] transition-height duration-500 ease-in-out ${!state ? "h-0 p-0 overflow-hidden" : "min-h-10 "} `}>
+    <>{state ? <div className={`bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 w-full p-2 md:block hidden text-center fixed font-primary top-0 z-[1000] text-[14px] transition-height duration-500 ease-in-out ${!state ? "h-0 p-0 overflow-hidden" : "min-h-10 "} `}>
     <p>{marquee?.marquee[0]?.text}</p>
     <button onClick={() => setState(false)} className="text-[20px] font-semibold absolute top-1 right-2"><FontAwesomeIcon icon={faTimes} /></button>
   </div> : ""}

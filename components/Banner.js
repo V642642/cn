@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import ComingSoon from "./popups/ComingSoon";
 
-export default function Banner() {
+export default function Banner({marquee}) {
   
   const [open , setOpen] = useState(false);
 
@@ -16,10 +16,10 @@ export default function Banner() {
   },[])
 
   return (
-    <div className="w-full relative h-[90vh] md:h-[85vh]">
-      <Header active={""}  />
+    <div className="w-full relative h-[90vh] md:h-[90vh]">
+      <Header active={""} marquee={marquee} />
       <ComingSoon open={open} setOpen={setOpen} />
-      <div className="relative videocontainer   top-[-100px]">
+      <div className="relative videocontainer  ">
         <video autoPlay loop muted id="myVideo">
           <source src="/hiringplug.mp4" type="video/mp4" />
           <source src="../public/hiringplug.webm" type="video/webm" />
@@ -46,11 +46,11 @@ export default function Banner() {
         </p>
 
         <Link
-          href="/request-a-demo"
+          href="/contact-us"
           className="cursor-pointer text-[16px] rounded px-8 py-4 overflow-hidden group bg-[#00a63f] relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
         >
           <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-          <span className="relative">REQUEST A DEMO</span>
+          <span className="relative">Contact US</span>
         </Link>
       </div>
     </div>
