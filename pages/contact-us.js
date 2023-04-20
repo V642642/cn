@@ -3,11 +3,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Contactus from "../components/ContactUs/Contactus";
 import ContactForm from "../components/ContactUs/ContactForm";
+import CBanner from "../components/ContactUs/CBanner";
 
 export default function ContactUS() {
   return (
     <div className="w-full font-primary flex flex-col items-center justify-center">
       <Header />
+      <CBanner/>
       <Contactus />
       <ContactForm />
       <iframe

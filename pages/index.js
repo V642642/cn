@@ -26,7 +26,7 @@ export default function Home({ marquee, cards }) {
       <OurClient />
       <Blog />
       <Social />
-      <Request />
+      {/* <Request /> */}
       <Footer />
     </div>
   );
