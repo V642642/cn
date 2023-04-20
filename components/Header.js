@@ -29,7 +29,7 @@ export default function Header() {
           <Image src={hplogo} alt="logo"  width={300} height={200} className="w-[250px]" />
         </Link>
         <ul className={`flex md:relative md:px-0 px-2 fixed md:flex-row items-start md:w-auto  w-[80%] flex-col top-0 right-0 md:h-auto h-[100vh] md:py-0 py-20 md:bg-opacity-100 bg-opacity-90 bg-black md:bg-transparent text-white md:items-center md:justify-between gap-2 transition-all duration-500 ease-in-out ${close ? "md:translate-x-0 translate-x-0" : "md:translate-x-0 translate-x-[1000px]"}`}>
-          <FontAwesomeIcon onClick={() => setClose(!close)} icon={faTimes}  className="text-white absolute top-2 right-4 text-[30px] md:inline-block hidden"/>
+          <FontAwesomeIcon style={{display : close ? "" : "none"}} onClick={() => setClose(!close)} icon={faTimes}  className="text-white absolute top-2 right-4 text-[30px] "/>
           <li>
             <Link
               className={`${
@@ -144,6 +144,24 @@ export default function Header() {
           <li>
             <Link
               className="px-3 transition-all inline-block md:py-[6px] py-2 hover:underline hover:bg-[#00a63f] cursor-pointer  text-[14px]"
+              href="/about-us"
+              target="_blank"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="px-3 transition-all inline-block whitespace-nowrap md:py-[6px] py-2 hover:underline hover:bg-green-500 cursor-pointer  text-[14px]"
+              href="/contact-us"
+              target="_blank"
+            >
+              Contact Us
+            </Link>
+          </li>
+          {/* <li>
+            <Link
+              className="px-3 transition-all inline-block md:py-[6px] py-2 hover:underline hover:bg-[#00a63f] cursor-pointer  text-[14px]"
               href="https://my.hiringplug.com/"
               target="_blank"
             >
@@ -158,12 +176,12 @@ export default function Header() {
             >
               Sign Up
             </Link>
-          </li>
+          </li> */}
 
           {/* {pathname !== "/request-a-demo" &&
           pathname !== "/about-us" &&
           pathname !== "/careers" ? ( */}
-            <li>
+            {/* <li>
               <Link
                 className="cursor-pointer whitespace-nowrap text-[14px] rounded px-5 py-2.5 overflow-hidden group bg-[#00a63f] relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out md:inline-block hidden duration-300"
                 href="/request-a-demo"
@@ -172,7 +190,7 @@ export default function Header() {
                 <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                 <span className="relative">REQUEST DEMO</span>
               </Link>
-            </li>
+            </li> */}
           
         </ul>
 

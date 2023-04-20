@@ -185,7 +185,7 @@ function EmailConfirmation({ setOpen, open }) {
                 </Stack>
                 <p className="w-full sm:w-10/12">
                   Quetions ? Email us at
-                  <span className="text-green-500">contact@hiringplug.com</span>
+                  <span className="text-green-500"> contact@hiringplug.com</span>
                 </p>
                 </form>
               <OTPVerification step={step} setStep={setStep} />

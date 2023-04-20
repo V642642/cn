@@ -1,11 +1,24 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
+import ComingSoon from "./popups/ComingSoon";
 
 export default function Banner() {
+  
+  const [open , setOpen] = useState(false);
+
+  useEffect(() => {
+     const timer = setTimeout(() => setOpen(false),1000);
+
+     return () => {
+      clearTimeout(timer)
+     }
+  },[])
+
   return (
     <div className="w-full relative h-[90vh] md:h-[85vh]">
-      <Header active={""} />
+      <Header active={""}  />
+      <ComingSoon open={open} setOpen={setOpen} />
       <div className="relative videocontainer   top-[-100px]">
         <video autoPlay loop muted id="myVideo">
           <source src="/hiringplug.mp4" type="video/mp4" />

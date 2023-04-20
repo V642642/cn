@@ -20,7 +20,7 @@ export default function ContactForm() {
     <div className="w-full px-2 lg:w-8/12 py-10 md:py-20 flex items-center justify-center flex-col">
       <div className="w-full  flex items-start justify-center flex-col">
         <p className="text-[30px]">
-          We&apos;d <span className="font-semibold">Love to</span> hear from you
+       <b>Contact US Directly</b>  
         </p>
         <p>
           Just fill out the form below and one of our agents will get back to

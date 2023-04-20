@@ -146,7 +146,7 @@ export default function Footer() {
                 icon={faFacebookF}
               />
             </a>
-            <a hre="https://twitter.com/hiringplug" target="_blank">
+            <a href="https://twitter.com/hiringplug" target="_blank">
               <FontAwesomeIcon
                 className="text-[28px] text-[#808080] hover:text-green-500 cursor-pointer"
                 icon={faTwitter}

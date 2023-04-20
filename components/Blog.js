@@ -1,7 +1,7 @@
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import Blog1 from "../public/images/blog1.webp";
 import Blog2 from "../public/images/blog2.webp";
 import Blog3 from "../public/images/blog3.webp";
@@ -9,25 +9,6 @@ import Blog3 from "../public/images/blog3.webp";
 export default function Blog() {
 
   const [play , setPlay ] = React.useState(true)
-
-//  useEffect(() => {
-
-//   if(!play){
-//     var msg = new SpeechSynthesisUtterance();
-//     msg.text = "Science agrees that the ageless skill of Procrastination is a sign of high IQ. But, there's a catch!";
-//     window.speechSynthesis.speak(msg);
-//     msg.onend = function(){
-//       setPlay(true);
-//     }
-//   }else{
-//     msg.paused()
-//   }
-
-//  },[play])
-    
-    
-
-  
 
 
   return (
@@ -53,9 +34,7 @@ export default function Blog() {
           </p>
           <p className="text-[14px]">Science agrees that the ageless skill of Procrastination is a sign of high IQ. But, there's a catch! ...</p>
           <p className="text-[10px] text-[#00a63f]">Read More</p>
-          <div className="w-full border-2 border-gray-700 rounded-[5px] p-2">
-            <p className="cursor-pointer  " onClick={() => setPlay(v => !v)}><FontAwesomeIcon icon={play ? faPlay : faPause} /></p>
-          </div>
+         
         </div>
         <div className="flex items-start gap-4 justify-center w-[90%] sm:w-[400px] flex-col">
           <Image src={Blog2} width={300} height={70} className="w-full" />
