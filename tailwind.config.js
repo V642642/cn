@@ -24,7 +24,8 @@ module.exports = {
         agency: "url('/images/agencies.webp')",
         "about-us": "url('/images/about-big.webp')",
         refer: "url('/images/refer-page.jpeg')",
-        thankyou : "url('/images/illustration.avif')"
+        thankyou : "url('/images/illustration.avif')",
+        rbanner : "url('/images/techhr-header.webp')"
       },
       animation: {
         text: "text 3s ease infinite",
