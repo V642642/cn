@@ -11,7 +11,7 @@ module.exports = {
   mode: "jit",
   theme: {
     fontFamily: {
-      primary: ["Poppins", "Arimo", "Jost"],
+      primary: ["Poppins", "Arimo", "Jost" ,"Open Sans"],
       secondary: ["Open Sans"],
     },
     extend: {
