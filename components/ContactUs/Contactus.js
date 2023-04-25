@@ -21,34 +21,34 @@ export default function Contactus() {
       </div>
       <div className=" w-11/12 sm:w-[400px] pt-10 min-h-[250px] border px-2 flex items-center justify-start  flex-col">
         <IconButton>
-          <a href="https://www.facebook.com/hiringplugofficial" target="_blank">
+          <a href="https://www.facebook.com/hiringplugofficial" target="_blank" rel="noreferrer">
           <FacebookIcon
             className="text-gray-900 text-[60px]"
           />
           </a>
           
         </IconButton>
-        <a className="text-center break-all" href="https://www.facebook.com/hiringplugofficial" target="_blank"><b>www.facebook.com/hiringplugofficial</b></a>
+        <a className="text-center break-all" rel="noreferrer" href="https://www.facebook.com/hiringplugofficial" target="_blank"><b>www.facebook.com/hiringplugofficial</b></a>
       </div>
       <div className=" w-11/12 sm:w-[400px] pt-10 min-h-[250px] border px-2 flex items-center justify-start  flex-col">
         <IconButton>
-        <a href="https://www.instagram.com/hiringplug/" target="_blank">
+        <a href="https://www.instagram.com/hiringplug/" target="_blank" rel="noreferrer">
           <InstagramIcon
             className="text-gray-900 text-[60px]"
           />
           </a>
         </IconButton>
-        <a className="text-center break-all" href="https://www.instagram.com/hiringplug/" target="_blank"><b>www.instagram.com/hiringplug</b></a>
+        <a className="text-center break-all" rel="noreferrer" href="https://www.instagram.com/hiringplug/" target="_blank"><b>www.instagram.com/hiringplug</b></a>
       </div>
       <div className=" w-11/12 sm:w-[400px] pt-10 min-h-[250px] border px-2 flex items-center justify-start  flex-col">
         <IconButton>
-          <a href="https://twitter.com/hiringplug" target="_blank">
+          <a href="https://twitter.com/hiringplug" target="_blank" rel="noreferrer">
           <TwitterIcon
             className="text-gray-900 text-[60px]"
           />
           </a>
         </IconButton>
-        <a className="text-center break-all" href="https://twitter.com/hiringplug" target="_blank">
+        <a className="text-center break-all" rel="noreferrer" href="https://twitter.com/hiringplug" target="_blank">
             <b>twitter.com/hiringplug</b>
           </a>
       </div>

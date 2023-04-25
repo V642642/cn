@@ -39,13 +39,16 @@ export default function SignupForm() {
         ? JSON.parse(localStorage.getItem("demo"))
         : {}
     );
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reset]);
 
   useEffect(() => {
     if (Object.keys(errors).length > 0) {
       setEdit(1);
     }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitted]);
+
   function onSubmit(data) {
     setIsLoading(true);
     const postData = {
@@ -102,7 +105,7 @@ export default function SignupForm() {
             animate-text"
         >
           <span className="text-center">
-            Thanks {name.fullname ? name.fullname : ""}, we've received your
+            Thanks {name.fullname ? name.fullname : <></>}, we&apos;ve received your
             demo request!
           </span>
         </p>
@@ -255,7 +258,7 @@ export default function SignupForm() {
             >
               <span className="absolute w-[280px] h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-gray-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
               <span className="relative text-gray-600 transition duration-300 group-hover:text-white text-center ease">
-                I'd do this later
+                I&apos;d do this later
               </span>
             </Link>
           </div>

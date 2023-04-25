@@ -24,6 +24,7 @@ function CareerPopUp({ setOpen, open }) {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wrapperRef]);
 
   return (
@@ -48,17 +49,17 @@ function CareerPopUp({ setOpen, open }) {
                 </IconButton>
                 <p className="text-[16px] text-center my-3">
                   Hey, Thanks for your interest in working with hiringplug™
-                  We'll carefully evaluate your details and get in touch if it
+                  We&apos;ll carefully evaluate your details and get in touch if it
                   matches our open requirements. Meanwhile, you may wish to
                   explore the below channels to stay updated on future openings
                   & latest trends in HR Technology.
                 </p>
-                <a href="https://blog.hiringplug.com" target="_blank">Our HR Blog</a>
-                <a href="https://www.instagram.com/hiringplug/" target="_blank">https://www.instagram.com/hiringplug/</a>
-                <a href="https://www.linkedin.com/company/hiringplug" target="_blank">https://www.linkedin.com/company/hiringplug</a>
-                <a href="https://twitter.com/hiringplug" target="_blank">https://twitter.com/hiringplug</a>
-                <a href="https://www.facebook.com/hiringplugofficial" target="_blank">https://www.facebook.com/hiringplugofficial</a>
-                <a href="https://in.pinterest.com/hiringplug/" target="_blank">https://in.pinterest.com/hiringplug/</a>
+                <a href="https://blog.hiringplug.com" target="_blank" rel="noreferrer">Our HR Blog</a>
+                <a href="https://www.instagram.com/hiringplug/" target="_blank" rel="noreferrer">https://www.instagram.com/hiringplug/</a>
+                <a href="https://www.linkedin.com/company/hiringplug" target="_blank" rel="noreferrer">https://www.linkedin.com/company/hiringplug</a>
+                <a href="https://twitter.com/hiringplug" target="_blank" rel="noreferrer">https://twitter.com/hiringplug</a>
+                <a href="https://www.facebook.com/hiringplugofficial" target="_blank" rel="noreferrer">https://www.facebook.com/hiringplugofficial</a>
+                <a href="https://in.pinterest.com/hiringplug/" target="_blank" rel="noreferrer">https://in.pinterest.com/hiringplug/</a>
                 <p className="text-[20px] my-5">Stay Plugged!</p>
               </div>
             </div>

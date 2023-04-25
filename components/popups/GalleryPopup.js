@@ -24,6 +24,7 @@ function GalleryPopup({ setOpen, open  }) {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wrapperRef]);
 
   var settings = {
@@ -75,7 +76,7 @@ function GalleryPopup({ setOpen, open  }) {
                 >
                   {src.map((data, index) => (
                     <div key={index} className="p-3 w-full flex items-center justify-center">
-                      <img
+                      <Image
                         width={320}
                         height={150}
                         className=" w-[100%] mx-auto h-[600px] object-contain cursor-pointer"

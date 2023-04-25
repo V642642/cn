@@ -4,6 +4,7 @@ export const FormContext = createContext();
 
 export default function FormProvider({ children }) {
   const [data, setData] = useState({});
+  const [subscribeData, setSubscribeData] = useState({});
 
   const setFormValues = (values) => {
     setData((prevValues) => ({
@@ -12,8 +13,16 @@ export default function FormProvider({ children }) {
     }));
   };
 
+  const setSubscribeValues = (values) => {
+    setSubscribeData((prevValues) => ({
+      ...prevValues,
+      ...values,
+    }));
+  };
+
+
   return (
-    <FormContext.Provider value={{ data, setFormValues }}>
+    <FormContext.Provider value={{ data, setFormValues , subscribeData  , setSubscribeValues}}>
       {children}
     </FormContext.Provider>
   );

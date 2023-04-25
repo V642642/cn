@@ -8,7 +8,7 @@ export default function Banner({marquee}) {
   const [open , setOpen] = useState(false);
 
   useEffect(() => {
-     const timer = setTimeout(() => setOpen(false),1000);
+     const timer = setTimeout(() => setOpen(true),1000);
 
      return () => {
       clearTimeout(timer)
