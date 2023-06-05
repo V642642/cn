@@ -10,6 +10,7 @@ import { Controller, useForm } from "react-hook-form";
 import { any, object, record, string, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Box from "@mui/material/Box";
+import CareerMail from "../../mailer/career-mail";
 
 export default function Careerform() {
   const [open, setOpen] = useState(false);
@@ -53,15 +54,15 @@ export default function Careerform() {
       "resume",
       data.resume.hasOwnProperty(0) ? data?.resume[0] : ""
     );
-
     axios
       .post(
-        `https://prod-in-api.hiringplug.com/manage-web-service/v1/create-career`,
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/manage-web-service/v1/create-career`,
         formData
       )
       .then((res) => {
         console.log(res);
         if (res?.data?.status) {
+          CareerMail(data.email ,data.firstname, data.lastname ? data.lastname : '')
           setOpen(true);
           reset()
         }

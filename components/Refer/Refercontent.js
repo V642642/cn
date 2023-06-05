@@ -3,20 +3,28 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function Refercontent() {
-
-  const {register , handleSubmit , formState : {errors}  } = useForm({mode : "onChange"});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
 
   const onSubmit = (data) => {
-  axios.post(`https://prod-in-api.hiringplug.com/manage-web-service/v1/create-career`, data);
-  }
-  
+    axios.post(
+      `${process.env.NEXT_PUBLIC_BACKEND_API}/manage-web-service/v1/create-career`,
+      data
+    );
+  };
+
   return (
-    <div className="flex w-11/12 lg:w-8/12 items-center justify-center flex-col font-primary">
+    <div
+      className="flex w-11/12 lg:w-8/12 items-center justify-center flex-col font-primary text-black
+    bg-white"
+    >
       <p className="text-center text-[#00a63f] font-semibold text-[25px]">
         Client Referral Scheme (CRS)
       </p>
       <p className="text-[15px] border-t border-gray-300 py-3 leading-[35px]">
-        
         <b>
           Is there someone you know who&apos;s actively hiring? Introduce them
           to us!
@@ -30,7 +38,10 @@ export default function Refercontent() {
       <p className="text-[18px] w-full  text-left">
         <b>Reference Details</b>
       </p>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full flex items-center justify-center py-6 flex-col gap-6">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full flex items-center justify-center py-6 flex-col gap-6"
+      >
         <div className="w-full md:flex-row flex-col flex items-center justify-center gap-4">
           <label className="w-full flex items-start justify-center flex-col">
             <p className="text-[12px] font-semibold text-gray-800">
@@ -39,7 +50,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="companyname"
-              {...register("companyname" , {required : true})}
+              {...register("companyname", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -50,7 +61,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="firstname"
-              {...register("firstname" , {required : true})}
+              {...register("firstname", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -63,7 +74,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="email"
-              {...register("email" , {required : true})}
+              {...register("email", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -74,7 +85,7 @@ export default function Refercontent() {
             <input
               type="number"
               name="phone"
-              {...register("phone" , {required : true})}
+              {...register("phone", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -88,7 +99,7 @@ export default function Refercontent() {
               placeholder=" (Please provide as much details as possible)"
               rows="5"
               name="message"
-              {...register("message" , {required : true})}
+              {...register("message", { required: true })}
               className=" text-[14px] p-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -105,7 +116,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="referredbyfullname"
-              {...register("referredbyfullname" , {required : true})}
+              {...register("referredbyfullname", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -116,7 +127,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="referredbyemail"
-              {...register("referredbyemail" , {required : true})}
+              {...register("referredbyemail", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -129,7 +140,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="referredbyphone"
-              {...register("referredbyphone" , {required : true})}
+              {...register("referredbyphone", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -140,7 +151,7 @@ export default function Refercontent() {
             <input
               type="text"
               name="referredbycontacttime"
-              {...register("referredbycontacttime" , {required : true})}
+              {...register("referredbycontacttime", { required: true })}
               className="h-10 text-[14px] px-2 w-full outline-green-900 border border-gray-400 rounded-[3px]"
             />
           </label>
@@ -149,12 +160,15 @@ export default function Refercontent() {
           <input
             type="checkbox"
             name="checkbox"
-            {...register("checkbox" , {required : true})}
+            {...register("checkbox", { required: true })}
             className="h-5 accent-green-800 w-5 cursor-pointer rounded-[3px]"
           />
           <span>I have read and fully agree to the terms below.</span>
         </label>
-        <button type="submit" className="w-full bg-[#00a63f] h-10 text-white text-[15px] rounded-[4px]">
+        <button
+          type="submit"
+          className="w-full bg-[#00a63f] h-10 text-white text-[15px] rounded-[4px]"
+        >
           Submit
         </button>
       </form>

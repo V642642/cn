@@ -14,15 +14,18 @@ import React, { useState } from "react";
 import hplogo from "../public/images/footer-logo.webp";
 import Award_icon from "../public/images/Award_icon.webp";
 import Awardpopup from "./popups/Awardpopup";
+import { useFormData } from "../context/index";
+
 
 export default function Footer() {
   const [open, setOpen] = useState(false);
+  const { loaderProp } = useFormData();
 
   return (
     <footer className="w-full flex items-center flex-col text-[#808080]  justify-center ">
       <div className="w-full py-9 flex items-center justify-center bg-[#2f2f2f]">
         <div className="w-full  lg:w-7/12 font-primary flex items-center justify-center flex-col gap-4">
-          <Image src={hplogo} alt="hplogo" />
+          <Image src={hplogo} alt="hplogo" loader={loaderProp} />
           <Awardpopup open={open} setOpen={setOpen} />
           <ul className="w-full flex items-center justify-center gap-6 flex-wrap">
             <li>
@@ -57,14 +60,14 @@ export default function Footer() {
                 ABOUT US
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/careers"
                 className="text-[12px] hover:text-white cursor-pointer uppercase"
               >
                 CAREERS
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="https://blog.hiringplug.com/"
@@ -75,7 +78,7 @@ export default function Footer() {
                 OUR HR BLOG
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="https://www.hiringplug.com/techhr"
                 target="_blank"
@@ -84,7 +87,7 @@ export default function Footer() {
               >
                 TECHHR 2022
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="/resources"
@@ -125,16 +128,19 @@ export default function Footer() {
                 CONTACT US
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/refer"
                 className="text-[12px] hover:text-white cursor-pointer uppercase"
               >
                 COLLABORATE
               </Link>
-            </li>
-            <li onClick={() => setOpen(true)} className="text-[12px] flex items-center hover:text-white cursor-pointer uppercase">
-              <Image src={Award_icon} alt="Award_icon" className="w-[25px]" />
+            </li> */}
+            <li
+              onClick={() => setOpen(true)}
+              className="text-[12px] flex items-center hover:text-white cursor-pointer uppercase"
+            >
+              <Image src={Award_icon} alt="Award_icon" className="w-[25px]" loader={loaderProp} />
               WINNER &quot;BEST RESOURCING SOFTWARE 2019&quot;
             </li>
           </ul>
@@ -149,7 +155,11 @@ export default function Footer() {
                 icon={faFacebookF}
               />
             </a>
-            <a href="https://twitter.com/hiringplug" target="_blank" rel="noreferrer">
+            <a
+              href="https://twitter.com/hiringplug"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 className="text-[28px] text-[#808080] hover:text-green-500 cursor-pointer"
                 icon={faTwitter}
@@ -165,7 +175,11 @@ export default function Footer() {
                 icon={faLinkedinIn}
               />
             </a>
-            <a href="https://www.instagram.com/hiringplug/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/hiringplug/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 className="text-[28px] text-[#808080] hover:text-green-500 cursor-pointer"
                 icon={faInstagramSquare}
@@ -177,7 +191,11 @@ export default function Footer() {
                 icon={faPinterestP}
               />
             </a>
-            <a href="https://www.youtube.com/hiringplug" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.youtube.com/hiringplug"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 className="text-[28px] text-[#808080] hover:text-green-500 cursor-pointer"
                 icon={faYoutube}
@@ -195,12 +213,21 @@ export default function Footer() {
             </a>
           </div>
           <p className="">
-            <a target="_blank" rel="noreferrer" href="https://www.hiringplug.com/privacy.php" className="hover:text-white text-[14px] cursor-pointer">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.hiringplug.com/privacy.php"
+              className="hover:text-white text-[14px] cursor-pointer"
+            >
               Privacy Policy
             </a>
-            |
-            <a target="_blank" rel="noreferrer" href="https://my.hiringplug.com/agency-recruiter-terms-of-use" className="hover:text-white text-[14px] cursor-pointer">
-              
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://my.hiringplug.com/agency-recruiter-terms-of-use"
+              className="hover:text-white text-[14px] cursor-pointer"
+            >
               Terms & Conditions
             </a>
           </p>
@@ -209,7 +236,7 @@ export default function Footer() {
 
       <div className="w-full flex items-center justify-center py-3  font-primary text-[12px] bg-[#252525]">
         <div className="w-full lg:w-7/12 px-2 flex items-center justify-between font-primary text-[12px] bg-[#252525]">
-          <p>TalenTECH Solutions Pvt Ltd</p>
+          <p>hiringplug Technologies Inc.</p>
           <p>© copyright {new Date().getFullYear()}. All rights reserved.</p>
         </div>
       </div>

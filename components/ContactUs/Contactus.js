@@ -8,7 +8,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 export default function Contactus() {
 
   return (
-    <div className="w-full gap-4 font-primary mt-6 flex-wrap flex items-center bg-white justify-center">
+    <div className="w-full gap-4 font-primary mt-6 flex-wrap flex items-center bg-white text-black justify-center">
       <div className=" w-11/12 sm:w-[400px] pt-10 min-h-[250px] border px-2 flex items-center justify-start  flex-col">
         <IconButton>
           <BusinessIcon className="text-gray-900 text-[60px]" />

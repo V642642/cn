@@ -25,7 +25,7 @@ export default function OTPVerification({ setStep, step }) {
 
     axios
       .post(
-        `https://prod-in-api.hiringplug.com/manage-web-service/v1/verify-otp/${delreqid}`,
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/manage-web-service/v1/verify-otp/${delreqid}`,
         postData
       )
       .then((res) => {

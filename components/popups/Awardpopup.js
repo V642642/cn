@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Award from "../../public/images/Awardpopup.webp";
+import { useFormData } from "../../context/index";
 
 function Awardpopup({ setOpen, open }) {
   const wrapperRef = useRef(null);
-
+  const { loaderProp } = useFormData();
   const handleClose = () => {
     setOpen(false);
   };
@@ -34,8 +35,15 @@ function Awardpopup({ setOpen, open }) {
           <div className="justify-center font-gothic items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
             <div className="relative  my-6 mx-auto lg:w-[600px] w-80 -top-28">
               <div className="flex bg-green-500  relative items-center justify-center">
-                <Image ref={wrapperRef} src={Award} alt="Award" />
-                <span className="absolute text-white right-2 text-[20px] top-1 cursor-pointer font-semibold">X</span>
+                <Image
+                  ref={wrapperRef}
+                  src={Award}
+                  alt="Award"
+                  loader={loaderProp}
+                />
+                <span className="absolute text-white right-2 text-[20px] top-1 cursor-pointer font-semibold">
+                  X
+                </span>
               </div>
             </div>
           </div>

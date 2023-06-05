@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Slider from "react-slick";
+import { useFormData } from "../../context/index";
 
-function GalleryPopup({ setOpen, open  }) {
+function GalleryPopup({ setOpen, open }) {
   const wrapperRef = useRef(null);
-
+  const { loaderProp } = useFormData();
   const handleClose = () => {
-    setOpen({state :false , initialSlide : 0});
+    setOpen({ state: false, initialSlide: 0 });
   };
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function GalleryPopup({ setOpen, open  }) {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wrapperRef]);
 
   var settings = {
@@ -35,7 +36,7 @@ function GalleryPopup({ setOpen, open  }) {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 10000,
-    initialSlide: open.initialSlide
+    initialSlide: open.initialSlide,
   };
 
   const src = [
@@ -68,20 +69,29 @@ function GalleryPopup({ setOpen, open  }) {
           <div className="justify-center font-gothic items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
             <div className="relative bg-black py-20 my-6 mx-auto w-full ">
               <div className="flex  w-full items-center justify-center">
-                <p onClick={handleClose} className="bg-white cursor-pointer text-black px-4 rounded-[4px] text-[18px] p-2 absolute top-3 right-4">X</p>
+                <p
+                  onClick={handleClose}
+                  className="bg-white cursor-pointer text-black px-4 rounded-[4px] text-[18px] p-2 absolute top-3 right-4"
+                >
+                  X
+                </p>
                 <Slider
                   id="gallery"
                   {...settings}
                   className="w-full flex items-center justify-center"
                 >
                   {src.map((data, index) => (
-                    <div key={index} className="p-3 w-full flex items-center justify-center">
+                    <div
+                      key={index}
+                      className="p-3 w-full flex items-center justify-center"
+                    >
                       <Image
                         width={320}
                         height={150}
                         className=" w-[100%] mx-auto h-[600px] object-contain cursor-pointer"
                         src={data.src}
                         alt="clients"
+                        loader={loaderProp}
                       />
                     </div>
                   ))}

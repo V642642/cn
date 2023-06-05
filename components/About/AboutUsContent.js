@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutUsContent() {
   return (
-    <div className="w-11/12 font-primary lg:w-7/12 md:w-9/12 flex items-start  justify-center flex-col">
+    <div className="w-11/12 font-primary lg:w-7/12 md:w-9/12 flex items-start  justify-center flex-col bg-white text-black">
       <h2 className="text-[25px] font-semibold text-gray-600">
         About <span className="text-[#00a63f]">Us</span>
       </h2>
@@ -63,7 +63,7 @@ export default function AboutUsContent() {
           </p>
         </div>
         <video autoPlay loop muted>
-          <source src="/hpHRAIaward2019.mp4" type="video/mp4;" />
+          <source src={`${process.env.NEXT_PUBLIC_S3_URL}/hpHRAIaward2019.mp4`} type="video/mp4;" />
         </video>
       </div>
     </div>

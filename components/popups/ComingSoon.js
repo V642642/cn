@@ -1,16 +1,8 @@
-import CloseIcon from "@mui/icons-material/Close";
-import { Button, IconButton, TextField } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Image from "next/image";
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import img from "../../public/image_processing20200709-23232-ig3q2v.gif";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { object, string } from "zod";
+import { useForm } from "react-hook-form";
 import { useFormData } from "../../context";
 import ComingSoonSecondStep from "./ComingSoonSecondStep";
-import axios from "axios";
 
 function ComingSoon({ setOpen, open }) {
   const wrapperRef = useRef(null);
@@ -18,7 +10,7 @@ function ComingSoon({ setOpen, open }) {
   const handleClose = () => {
     setOpen(false);
   };
-  const { subscribeData, setSubscribeValues } = useFormData();
+  const { subscribeData, setSubscribeValues, loaderProp } = useFormData();
 
   useEffect(() => {
     /**
@@ -38,46 +30,43 @@ function ComingSoon({ setOpen, open }) {
     // eslint-disable-next-line
   }, [wrapperRef]);
 
-  const { palette } = createTheme();
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#00a63f",
-        contrastText: "white",
-      },
-    },
-  });
+  // const { palette } = createTheme();
+  // const theme = createTheme({
+  //   palette: {
+  //     primary: {
+  //       main: "#00a63f",
+  //       contrastText: "white",
+  //     },
+  //   },
+  // });
 
-  const registerSchema = object({
-    email: string().nonempty("Email is required").email("Email is invalid"),
-  });
+  // const registerSchema = object({
+  //   email: string().nonempty("Email is required").email("Email is invalid"),
+  // });
 
   const {
-    control,
+    
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: zodResolver(registerSchema),
-  });
+    register
+  } = useForm(
+    // {   resolver: zodResolver(registerSchema),}
+    );
 
-  const [loading , setLoading] = useState(false);
-
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = (data) => {
     setLoading(true);
     setSubscribeValues(data);
-
-    // 
-    setStep(2); 
     axios
       .post(
         `${process.env.NEXT_PUBLIC_BACKEND_API}/manage-web-service/v1/subscribe`,
         data
       )
       .then((res) => {
-        setLoading(false)
+        setLoading(false);
         if (res?.data?.status) {
-          localStorage.setItem('delreqid',res?.data?.data.delreqid)
+          localStorage.setItem("delreqid", res?.data?.data.delreqid);
           setStep(2);
         }
       });
@@ -88,87 +77,61 @@ function ComingSoon({ setOpen, open }) {
       {open && (
         <React.Fragment>
           <div className="justify-center font-gothic items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
-            <div className="relative  my-6 mx-auto lg:w-[800px] w-80 -top-28 rounded-xl  bg-white p-4 px-4 sm:px-20 sm:py-10">
-              <form
-                onSubmit={handleSubmit(onSubmit)}
+            <div className="relative  my-6 mx-auto lg:w-[800px] w-80 sm:w-[400px] top-0  border-4 border-gray-500 bg-white ">
+              <div
+                
                 className={`${step === 1 ? "content-w show-w" : "content-w"}
                 flex  font-primary w-full items-start flex-col  justify-center `}
               >
-                <p className="text-[30px] w-full text-left">
-                  <span className="w-[50px] inline-block bg-black p-[2px] mb-[8px] mr-[2px]"></span>
-                  Coming <span className="text-green-500">Soon</span>
+                 <img onClick={handleClose} src="/images/closebutton.png" className="absolute w-[30px] md:w-[40px] top-0 right-0 cursor-pointer" />
+                <p className="px-2 md:py-2 py-4 bg-[#00a63f] text-[25px] md:text-[40px] text-center text-white  w-full ">
+                  <b>Get involved</b> in the future of hiring!
                 </p>
-                <div className="w-full flex items-center justify-between">
-                  <div className="w-full flex flex-col items-start justify-between">
-                    <p className="text-[50px] w-full text-left">
-                      Get <span className="text-green-500">Notified</span>{" "}
-                    </p>
-                    <p className="text-[50px] w-full text-left">
-                      When we Launch
-                    </p>
-                  </div>
-                  <Image
-                    src={img}
-                    alt={img}
-                    width={300}
-                    height={300}
-                    className="my-5"
-                  />
-                </div>
-
-                <label className="flex items-center justify-between  gap-1 w-full mt-10">
-                  <Controller
-                    name={"email"}
-                    control={control}
-                    render={({ field: { onChange, value } }) => (
-                      <TextField
-                        error={!!errors["email"]}
-                        helperText={
-                          errors["email"] ? errors["email"].message : ""
-                        }
-                        label="Enter your email address"
-                        variant="outlined"
-                        className="w-full"
-                        onChange={onChange}
-                        value={value}
+                <p className="px-4 py-3 bg-gray-500 text-[20px] font-light text-center text-white  w-full ">
+                  We&rsquo;re getting all wired-up to unveil an awesome hiring
+                  experience. Drop in your details for an Early invitation.
+                </p>
+                <form onSubmit={handleSubmit(onSubmit)} className="w-full flex items-center justify-center flex-col lg:flex-row my-8">
+                  <div className="lg:w-6/12 w-full relative flex items-center justify-end">
+                    <label className="flex absolute top-[24%] left-0  lg:left-[-10px] items-start justify-between  gap-1 w-full mt-10">
+                      <input
+                        className="w-full placeholder-[#00a63f] font-bold placeholder:font-bold italic bg-white px-4 text-[#00a63f] outline text-[20px] outline-4 outline-gray-600 border-gray-500 border-3 rounded-[35px] md:h-[75px] h-[51px]"
+                        {...register("email", {
+                          required: "Email is required !",
+                          pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "invalid email address",
+                          },
+                        })}  
+                        type="email"      
+                        placeholder="Your email..."
                       />
-                    )}
+                    </label>
+                    
+                    <img
+                      src="/images/comingsooncircle.png"
+                      alt="circle"
+                      className="w-10/12"
+                    />
+                    
+                  </div>
+                  {loading ? <p className="font-bold ml-4 text-[20px]">Please wait...</p> :  <button type="submit" >
+                  <img
+                    src="/images/comingsoonbtn.png"
+                    alt="btn"
+                    className="w-[100px] mb-2 cursor-pointer"
                   />
+                  </button>
+                  }
+                
+                </form>
+              </div>
 
-                  {/* <TextField
-                    label="Enter your email address"
-                    variant="outlined"
-                    className="w-full"
-                  /> */}
-
-                  <IconButton
-                    aria-label="close"
-                    onClick={handleClose}
-                    sx={{
-                      position: "absolute",
-                      right: 8,
-                      top: 8,
-                      color: (theme) => theme.palette.grey[500],
-                    }}
-                  >
-                    <CloseIcon />
-                  </IconButton>
-
-                  <ThemeProvider theme={theme}>
-                    <Button
-                      variant="contained"
-                      className="bg-green-600 h-[53px] whitespace-nowrap  px-5 hover:bg-green-600 text-white"
-                      type="submit"
-                      // color="success"
-                      style={{ BackgroundColor: "#00a63f" }}
-                    >
-                      {loading ? "Please wait...." : "Notify Me"}
-                    </Button>
-                  </ThemeProvider>
-                </label>
-              </form>
-
-              <ComingSoonSecondStep setStep={setStep} step={step} />
+              <ComingSoonSecondStep
+                handleClose={handleClose}
+                setStep={setStep}
+                step={step}
+              />
             </div>
           </div>
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>

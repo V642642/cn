@@ -1,16 +1,22 @@
 import React from 'react'
 import Image from 'next/image';
 import agency from "../../public/images/AgencyScreenshot.webp";
-
+import {useFormData} from "../../context/index";
 
 export default function AProductBanner() {
+
+  const { loaderProp } = useFormData();
+
   return (
     <div className="w-full flex items-start justify-center flex-col md:flex-row md:gap-10 gap-2  p-2">
     <div className=" inline-flex w-full md:w-6/12">
       <Image
-        src={agency}
+        src={`${process.env.NEXT_PUBLIC_S3_URL}/images/AgencyScreenshot.webp`}
         alt="agency"
+        width={600}
+        height={600}
         className="object-contain  w-full md:min-h-[500px]"
+        loader={loaderProp}
       />
     </div>
 

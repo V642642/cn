@@ -8,7 +8,7 @@ export default function Banner({marquee}) {
   const [open , setOpen] = useState(false);
 
   useEffect(() => {
-     const timer = setTimeout(() => setOpen(true),1000);
+     const timer = setTimeout(() => setOpen(true),5000);
 
      return () => {
       clearTimeout(timer)
@@ -21,11 +21,12 @@ export default function Banner({marquee}) {
       <ComingSoon open={open} setOpen={setOpen} />
       <div className="relative videocontainer  ">
         <video autoPlay loop muted id="myVideo">
-          <source src="/hiringplug.mp4" type="video/mp4" />
-          <source src="../public/hiringplug.webm" type="video/webm" />
+          <source src={`${process.env.NEXT_PUBLIC_S3_URL}/hiringplug.mp4`} type="video/mp4" />
+          <source src={`${process.env.NEXT_PUBLIC_S3_URL}/../public/hiringplug.webm`} type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </div>
+
       {/* <div class="relative videocontainer top-[-100px]">
 		  <video autoplay="" loop="" muted="">
 			<source src="../public/hiringplug.mp4" type="video/mp4;"/>
@@ -46,11 +47,11 @@ export default function Banner({marquee}) {
         </p>
 
         <Link
-          href="/contact-us"
+          href="/request-a-demo"
           className="cursor-pointer text-[16px] rounded px-8 py-4 overflow-hidden group bg-[#00a63f] relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
         >
           <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-          <span className="relative">Contact US</span>
+          <span className="relative">Learn more</span>
         </Link>
       </div>
     </div>

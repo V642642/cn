@@ -6,17 +6,20 @@ import sign from "../../public/images/sign-icon.webp";
 import vacancy from "../../public/images/connect.webp";
 import propose from "../../public/images/propose.webp";
 import Clientspopup from "../popups/Clientspopup";
+import { useFormData } from "../../context/index";
 
 export default function ANextSteps() {
-
   const [open, setOpen] = useState(false);
-
+  const { loaderProp } = useFormData();
 
   return (
     <div className="flex bg-fixed bg-no-repeat bg-cover bg-[50%] flex-col  border-t-8 border-green-500  w-full gap-2 items-center bg-enextsteps justify-center">
       <div className="w-full md:w-8/12 py-14 flex items-center justify-around gap-5 flex-col ">
         <div className="flex items-center justify-center py-10 flex-col gap-6">
-          <div onClick={() => setOpen(true)} className="w-[150px] cursor-pointer h-[150px] flex items-center justify-center rounded-full border-4 border-green-700">
+          <div
+            onClick={() => setOpen(true)}
+            className="w-[150px] cursor-pointer h-[150px] flex items-center justify-center rounded-full border-4 border-green-700"
+          >
             <FontAwesomeIcon icon={faPlay} className="text-[60px] text-white" />
           </div>
           <Clientspopup open={open} setOpen={setOpen} />
@@ -26,23 +29,23 @@ export default function ANextSteps() {
         </div>
         <div className="flex items-center sm:flex-row flex-col justify-center gap-5 w-full">
           <div className="flex md:mr-5 items-center justify-center py-10 flex-col gap-6">
-            <Image src={sign} alt="signin" />
+            <Image width={150} height={150} src={`${process.env.NEXT_PUBLIC_S3_URL}/images/sign-icon.webp`} alt="signin" loader={loaderProp} />
             <p className="text-[25px] font-primary  text-white bg-gray-700 bg-opacity-50 font-semibold uppercase py-2 px-6">
               Sign up
             </p>
           </div>
 
           <div className="flex items-center justify-center py-10 flex-col gap-6">
-            <Image src={vacancy} alt={vacancy} />
+            <Image width={150} height={150}  src={`${process.env.NEXT_PUBLIC_S3_URL}/images/connect.webp`} alt={'vacancy'} loader={loaderProp} />
             <p className="text-[25px] font-primary  text-white bg-gray-700 bg-opacity-50 font-semibold uppercase py-2 px-6">
-            Engage
+              Engage
             </p>
           </div>
 
           <div className="flex items-center justify-center py-10 flex-col gap-6">
-            <Image src={propose} alt={propose} />
+            <Image width={150} height={150}  src={`${process.env.NEXT_PUBLIC_S3_URL}/images/propose.webp`} alt={'propose'} loader={loaderProp} />
             <p className="text-[25px] font-primary  text-white bg-gray-700 bg-opacity-50 font-semibold uppercase py-2 px-6">
-            Propose
+              Propose
             </p>
           </div>
         </div>

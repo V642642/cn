@@ -4,7 +4,7 @@ function Clientspopup({ setOpen, open }) {
   const wrapperRef = useRef(null);
 
   const handleClose = () => {
-    setOpen(false);
+    setOpen({state : false , url : ''});
   };
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Clientspopup({ setOpen, open }) {
 
   return (
     <>
-      {open && (
+      {open.state && (
         <React.Fragment>
           <div className="justify-center font-gothic items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
             <div className="relative  my-6 mx-auto lg:w-[600px] w-80 -top-28">
@@ -37,7 +37,7 @@ function Clientspopup({ setOpen, open }) {
                   width="900"
                   height="400"
                   id="ypopupvideo1"
-                  src="https://www.youtube.com/embed/_9zP2rUZp0w?autoplay=1"
+                  src={`${open.url}&autoplay=1`}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

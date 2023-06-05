@@ -1,28 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import hplogo from "../public/images/logo-header.webp";
+// import hplogo from "../public/logo-header.21976240.bmp";
+// import hplogo from "../public/logo-header.21976240.webp";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faTimes } from "@fortawesome/free-solid-svg-icons";
 import CA from "../public/images/canada.webp";
 import IN from "../public/images/india-flag.webp";
-import { faDropbox } from "@fortawesome/free-brands-svg-icons";
+import USA from "../public/images/usa.webp";
+// import CAGIF from "../public/imgpsh_fullsize_anim.gif";
 import Marquee from "./Marquee";
+import { useFormData } from "../context/index";
 
-export default function Header({ marquee }) {
+export default function Header() {
   const { pathname } = useRouter();
   const [state, setState] = useState(true);
   const [close, setClose] = useState(false);
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef(null);
-  
+  const { loaderProp } = useFormData();
 
   const origin =
     typeof window !== "undefined" && window.location.origin
       ? window.location.origin
       : "";
-
 
   useEffect(() => {
     /**
@@ -43,29 +45,50 @@ export default function Header({ marquee }) {
 
   return (
     <>
-      {pathname === "/" && state ? <Marquee state={state} setState={setState} marquee={marquee} /> : <></>}
+      {pathname === "/" && state ? (
+        <Marquee state={state} setState={setState}  />
+      ) : (
+        <></>
+      )}
 
       <div
-        className={` ${pathname === "/" && state ? "md:top-[37px] top-0" : "top-0"} w-full h-[100px] fixed   z-10 font-primary  flex items-center bg-black bg-opacity-70	 justify-center`}
+        className={` ${
+          pathname === "/" && state ? "lg:top-[37px] top-0" : "top-0"
+        } w-full h-[100px] fixed   z-10 font-primary  flex items-center bg-black bg-opacity-70	 justify-center`}
       >
         <div
           className="w-11/12 xl:w-[70%] lg:w-10/12 flex py-5 items-center
         justify-between"
         >
+          <div className="flex gap-2">
           <Link href="/">
+              <Image
+                src={`${process.env.NEXT_PUBLIC_S3_URL}/logo-header.21976240.webp`}
+                alt="logo"
+                width={150}
+                height={100}
+                className="w-[250px] object-cover"
+                loader={loaderProp}
+              />
+            </Link>
+            <Link href="/" className="sm:block hidden">
             <Image
-              src={hplogo}
-              alt="logo"
-              width={300}
-              height={200}
-              className="w-[250px]"
+              src={`${process.env.NEXT_PUBLIC_S3_URL}/imgpsh_fullsize_anim.gif`}
+              alt="CAGIF"
+              width={150}
+              height={100}
+              className="w-[120px] opacity-75	 object-cover"
+              loader={loaderProp}
             />
-          </Link>
+            </Link>
+            
+          </div>
+
           <ul
-            className={`flex md:relative md:px-0 px-2 fixed md:flex-row items-start md:w-auto  w-[80%] flex-col top-0 right-0 md:h-auto h-[100vh] md:py-0 py-20 md:bg-opacity-100 bg-opacity-90 bg-black md:bg-transparent text-white md:items-center md:justify-between gap-2 transition-all duration-500 ease-in-out ${
+            className={`flex lg:relative md:px-0 px-2 fixed md:flex-row items-start md:w-auto  w-[80%] flex-col top-0 right-0 md:h-auto h-[100vh] md:py-0 py-20 md:bg-opacity-100 bg-opacity-90 bg-black md:bg-transparent text-white md:items-center md:justify-between gap-2 transition-all duration-500 ease-in-out ${
               close
-                ? "md:translate-x-0 translate-x-0"
-                : "md:translate-x-0 translate-x-[1000px]"
+                ? "lg:translate-x-0 translate-x-0"
+                : "lg:translate-x-0 translate-x-[1000px]"
             }`}
           >
             <FontAwesomeIcon
@@ -197,12 +220,17 @@ export default function Header({ marquee }) {
               </Link>
             </li>
             <li ref={wrapperRef} className="text-[14px]">
-              <div className="flex cursor-pointer relative py-[2px] items-center border-[1px] border-gray-100 justify-center gap-2 w-[120px]">
+              <div
+                className={` ${
+                  open ? "border-b border-white" : " "
+                }   flex cursor-pointer   relative py-[2px] items-center  justify-center gap-2 w-[120px]`}
+              >
                 <Image
                   src={CA}
                   alt={CA}
                   width={25}
                   className="border w-[25px] border-white object-contain"
+                  loader={loaderProp}
                 />
                 <p>Canada</p>
                 <FontAwesomeIcon
@@ -212,17 +240,30 @@ export default function Header({ marquee }) {
                 />
               </div>
               {open ? (
-                <div className="flex cursor-pointer py-[2px] border-t-0 absolute items-center px-[4px] border-[1px] border-gray-100 justify-between gap-2 w-[120px]">
-                  <div className="flex items-center justify-between gap-2">
-                    <Image
-                      src={IN}
-                      alt={IN}
-                      width={25}
-                      className="border w-[25px] border-white object-contain"
-                    />
-                    <p>India</p>
+                <>
+                  <div className="flex cursor-pointer  flex-col py-[2px] border-t-0 absolute items-start  border-[1px] border-gray-100 justify-between gap-[1px] w-[120px]">
+                    <div className="flex items-center px-[4px] justify-between gap-2">
+                      <Image
+                        src={IN}
+                        alt={IN}
+                        width={25}
+                        className="border w-[25px] border-white object-contain"
+                        loader={loaderProp}
+                      />
+                      <p>India</p>
+                    </div>
+                    <div className="flex w-full px-[4px] items-center border-t border-white  justify-start gap-2">
+                      <Image
+                        src={USA}
+                        alt={USA}
+                        width={25}
+                        className="border w-[25px] border-white object-contain"
+                        loader={loaderProp}
+                      />
+                      <p>USA</p>
+                    </div>
                   </div>
-                </div>
+                </>
               ) : (
                 <></>
               )}
@@ -263,7 +304,7 @@ export default function Header({ marquee }) {
 
           <div
             onClick={() => setClose(!close)}
-            className="flex md:hidden items-center justify-center flex-col gap-1"
+            className="flex lg:hidden items-center justify-center flex-col gap-1"
           >
             <p className="w-[30px] py-[1px] bg-white"></p>
             <p className="w-[30px] py-[1px] bg-white"></p>

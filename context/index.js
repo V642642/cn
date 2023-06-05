@@ -5,6 +5,9 @@ export const FormContext = createContext();
 export default function FormProvider({ children }) {
   const [data, setData] = useState({});
   const [subscribeData, setSubscribeData] = useState({});
+  const loaderProp =({ src }) => {
+    return src;
+  }
 
   const setFormValues = (values) => {
     setData((prevValues) => ({
@@ -22,7 +25,7 @@ export default function FormProvider({ children }) {
 
 
   return (
-    <FormContext.Provider value={{ data, setFormValues , subscribeData  , setSubscribeValues}}>
+    <FormContext.Provider value={{ data, setFormValues , subscribeData  , setSubscribeValues , loaderProp}}>
       {children}
     </FormContext.Provider>
   );

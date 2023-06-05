@@ -61,7 +61,7 @@ function EmailConfirmation({ setOpen, open }) {
     setLoading(true)
     axios
       .post(
-        `https://prod-in-api.hiringplug.com/manage-web-service/v1/delete-user-data`,
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/manage-web-service/v1/delete-user-data`,
         data
       )
       .then((res) => {

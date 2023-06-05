@@ -6,7 +6,7 @@ import "react-phone-input-2/lib/style.css";
 
 export default function FirstStep({ setStep }) {
   const { data, setFormValues } = useFormData();
-  const [phone, setPhone] = useState("+91");
+  const [phone, setPhone] = useState("+1");
   const [mobile, setMobile] = useState("");
   const [error, setError] = useState({ status: false, message: "" });
 
@@ -27,7 +27,7 @@ export default function FirstStep({ setStep }) {
       });
       return false;
     } else {
-      setFormValues({ ...values, phone: mobile });
+      setFormValues({ ...values, phone: phone });
       setStep(1);
     }
   };
@@ -57,7 +57,7 @@ export default function FirstStep({ setStep }) {
     >
       <label className="w-full relative flex items-start justify-center flex-col">
         <p className="text-[15px] font-semibold text-gray-800">
-          <span className="text-red-800 ">*</span> Name :
+          <span className="text-red-800 ">*</span>Full Name :
         </p>
         <input
           name="fullname"
@@ -119,7 +119,7 @@ export default function FirstStep({ setStep }) {
           // buttonStyle={{width : "20%"}}
           value={phone}
           onChange={handleOnChangeNumber}
-          country={"in"}
+          country="ca"
         />
         {error.status ? (
           <span className="absolute  font-gothic top-14 text-[12px] text-red-500 left-0">
