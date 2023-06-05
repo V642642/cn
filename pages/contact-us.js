@@ -4,12 +4,15 @@ import Footer from "../components/Footer";
 import Contactus from "../components/ContactUs/Contactus";
 import ContactForm from "../components/ContactUs/ContactForm";
 import CBanner from "../components/ContactUs/CBanner";
+import Crypto from "../encryption";
 
 export default function ContactUS() {
+
+  console.log(Crypto())
   return (
     <div className="w-full font-primary flex flex-col items-center justify-center">
       <Header />
-      <CBanner/>
+      <CBanner />
       <Contactus />
       <ContactForm />
       <iframe
@@ -19,9 +22,8 @@ export default function ContactUS() {
         frameborder="0"
         allowfullscreen
       ></iframe>
-      <div className="w-full px-2 flex items-start py-10 lg:w-8/12 justify-center flex-col gap-4">
-        <p className="font-semibold">Let&apos;s Connect
-</p>
+      <div className="w-full px-2 flex items-start py-10 lg:w-8/12 justify-center flex-col gap-4 bg-white text-black">
+        <p className="font-semibold">Let&apos;s Connect</p>
         <div className="w-full flex items-center justify-start md:flex-row flex-col gap-2">
           <p className="md:w-[25%] w-full"> Office Address</p>
           <p className="w-full md:w-[75%]">

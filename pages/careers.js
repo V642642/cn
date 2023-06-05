@@ -8,7 +8,7 @@ import { createClient } from "../prismicio";
 import EmailConfirmation from "../components/popups/EmailConfirmation";
 
 export default function Careers({ jobs }) {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   return (
     <div className="w-full  flex items-center justify-center flex-col">
